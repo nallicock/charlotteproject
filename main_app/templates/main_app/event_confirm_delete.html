@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+<div class="row center">
+  <div id="card-content col s4">
+    <img id="logo" width="250" src="/static/images/Charlotte..png" />
+  </div>
+  <h1>Delete Event</h1>
+
+  <h4>Are you sure you want to delete {{object.name}}?</h4>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Yes" class="btn" />
+    <a href="{% url 'detail' event.id%}" class="btn">CANCEL</a>
+  </form>
+</div>
+
+{% endblock %}

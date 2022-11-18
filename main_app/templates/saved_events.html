@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block content %}
+<h1 class="center">My Events</h1>
+<hr />
+{% for event in events %}
+<!-- For each x in savedEvents, create a new card in the row with the details -->
+<div class="row">
+  <div class="col s12 m4 offset-m4">
+    <a href="{% url 'detail' event.id %}">
+      <div class="card" id="text-color">
+        <div class="card-content bg shadow">
+          <div class="card-image">
+            {% for photo in event.photo_set.all %}
+            <img src="{{photo.url}}" />
+            {% empty %}
+            <div id="text-color-brand">No Picture Uploaded.</div>
+            {% endfor %}
+          </div>
+          <p id="title" class="center">{{ event.name }}</p>
+          <p class="center" id="title">{{ event.date }}</p>
+          <br />
+          <p id="roboto">{{ event.location }}</p>
+          <p id="roboto">{{ event.address }}</p>
+          <p id="roboto">Event Category: {{event.get_category_display}}</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+{% endfor %} {% endblock %}

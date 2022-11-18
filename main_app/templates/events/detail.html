@@ -1,0 +1,68 @@
+{% extends 'base.html' %} {% block content %}
+<!-- start for loop -->
+<br />
+<hr />
+<div class="row">
+  <div class="col s12 m5 offset-m1">
+    <div class="card">
+      <div class="card-content bg shadow">
+        <div class="card-image">
+          {% for photo in event.photo_set.all %}
+          <img src="{{photo.url}}" />
+          {% empty %}
+          <div id="text-color-brand">No Pictures Uploaded Yet</div>
+          {% endfor %}
+        </div>
+        <img src="{{photo.url}}" />
+        <p id="title" class="center">{{ event.name }}</p>
+        <p class="center" id="title">{{ event.date }}</p>
+        <br />
+        <p id="roboto">Location: {{ event.location }}</p>
+        <p id="roboto">Address: {{ event.address }}</p>
+        <p id="roboto">Category: {{event.get_category_display}}</p>
+        {% if event.user == user %}
+        <a class="btn" href="update/">UPDATE</a>
+        <a class="btn" href="delete/">DELETE</a>
+        {% else %} {% endif %}
+      </div>
+    </div>
+    <br />
+    {% if event.user == user %}
+    <div class="col s12 m5">
+      <form
+        action="{% url 'add_photo' event.id %}"
+        enctype="multipart/form-data"
+        method="POST"
+      >
+        {% csrf_token %}
+        <input type="submit" class="btn" value="Upload Photo" />
+        <input type="file" name="photo-file" />
+      </form>
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="col s12 m5">
+    <form action="{% url 'add_comment' event.id %}" method="post">
+      {% csrf_token %} {{comment_form.as_p}}
+      <input type="submit" class="btn" value="Add Comment" />
+    </form>
+    <table class="striped">
+      <thead>
+        <tr>
+          <th>Comments:</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for comment in event.comment_set.all %}
+        <tr>
+          <td>{{comment.comment}}</td>
+          <td>{{comment.user}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}

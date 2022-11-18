@@ -6,27 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'css/style.css' %}"
-    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
       </style> 
+
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'css/style.css' %}"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+      </style> 
   </head>
-  <body>
-    <div class="navbar-fixed s12 l3">
+  <body id="home">
+    <div class="navbar-fixed s12">
       <nav id="banner">
         <div class="nav-wrapper">
-          <ul>
+            <ul>
             {% if user.is_authenticated %}
             <li class="right">
-              <a id="text-color" href="{% url 'add_event' %}">Create Event</a>
+              <a id="text-color" href="{% url 'events_create' %}">Create Event</a>
             </li>
             <li class="right">
               <a id="text-color" href="{% url 'logout' %}">Sign Out</a>
+            </li>
+            <li class = "right">
+              <a id="text-color" href="{% url 'saved_events' %}">Saved Events</a>
+            </li>
+            <li class = "right">
+              <a id="text-color" href="{% url 'home' %}">Home</a>
             </li>
             <br/>
             <div id="roboto">Welcome {{user}}!</div>
@@ -37,15 +47,42 @@
             <li class="right">
               <a id="text-color" href="{% url 'signup' %}">Sign Up</a>
             </li>
+            <li class = "right">
+              <a id="text-color" href="{% url 'home' %}">Home</a>
+            </li>
             <br/>
             <div id="roboto">Hello there.</div>
             {% endif %}
           </ul>
-          <a id="text-color-brand" href="/" class="brand-logo center">Charlotte.</a>
-      </nav>
-    </div>
-    <br/><br/><br/><br/><br/><br/><br/>
+          <div>
+            <a id="text-color-brand" href="/" class="brand-logo center">Charlotte.</a>
+          </div>
+        </nav>
+      </div>
+    <br/><br/><br/><br/><br/>
 
     <main>{% block content %} {% endblock %}</main>
+    <script>
+    var selectEl = document.getElementById('id_category');
+      M.FormSelect.init(selectEl);
+      let selectOptionsEls = document.querySelectorAll('[id^="select-options"]')
+      for (let option of selectOptionsEls) {
+        option.childNodes.forEach(li => {
+          li.style.color = "#222093"
+        })
+       }
+
+    document.addEventListener("DOMContentLoaded", function () {
+    var elems = document.getElementById("id_date");
+    var instances = M.Datepicker.init(elems, {
+      format: "yyyy-mm-dd",
+      setDefaultDate: true,
+      autoClose: true,
+      opacity: 1,
+        });
+     });
+
+      // document.querySelector('.dropdown-trigger').style.color="#222093"
+    </script>
   </body>
 </html>

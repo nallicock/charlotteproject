@@ -1,0 +1,9 @@
+*.env
+*.pyc
+**/migrations/**
+!**/migrations
+<<<<<<< HEAD
+!**/migrations/__init__.py
+=======
+!**/migrations/__init__.py
+>>>>>>> 99a1cbd (edited gitignore)

@@ -1,81 +1,32 @@
 {% extends 'base.html' %} {% block content %}
 <body id="home">
-  <h6>Picks for you:</h6>
+  <h2 class="">Available Events:</h2>
+  <hr class="home" />
+  {% for event in events %}
+  <!-- For each x in savedEvents, create a new card in the row with the details -->
   <div class="row">
-    <div class="col s12 m5 offset-m1">
-      <div class="card">
-        <div class="card-image">
-          <img src="../static/images/mars-summit-ss.png" />
-        </div>
-        <div class="card-content bg shadow">
-          <p id="title" class="center">MarS Supply AI Summit</p>
-          <p class="center">Mon, Nov 14, 6:00pm</p>
-          <br />
-          <p id="roboto">Location: MarS Building</p>
-          <p id="roboto">101 College St, Toronto, ON</p>
-          <br />
-          <div class="center">
-            <a href="#" class="btn blue darken-4">Bookmark</a>
-            <a href="#" class="btn blue darken-4">RSVP</a>
+    <div class="col s12 m4 offset-m4">
+      <a href="{% url 'detail' event.id %}">
+        <div class="card" id="text-color">
+          <div class="card-content bg shadow">
+            <div class="card-image">
+              {% for photo in event.photo_set.all %}
+              <img src="{{photo.url}}" />
+              {% empty %}
+              <div id="text-color-brand">No Picture Uploaded.</div>
+              <br />
+              {% endfor %}
+            </div>
+            <p id="title" class="center">{{ event.name }}</p>
+            <p class="center" id="title">{{ event.date }}</p>
+            <br />
+            <p id="roboto">{{ event.location }}</p>
+            <p id="roboto">{{ event.address }}</p>
+            <p id="roboto">Event Category: {{event.get_category_display}}</p>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="col s12 m5 offset-m1">
-      <div class="card">
-        <div class="card-image">
-          <img src="../static/images/toronto-professionals-mixer-ss.png" />
-        </div>
-        <div class="card-content bg shadow">
-          <p id="title" class="center">
-            Toronto Professionals & Entrepreneurs Social Mixer (Networking
-            Event)
-          </p>
-          <p class="center">Tues, Nov 15, 7:00pm</p>
-          <br />
-          <p id="roboto">Location: Ruth's Chris Steak House</p>
-          <p id="roboto">145 Richmond Street, Toronto, ON</p>
-          <br />
-          <div class="center">
-            <a href="#" class="btn blue darken-4">Bookmark</a>
-            <a href="#" class="btn blue darken-4">RSVP</a>
-          </div>
-        </div>
-      </div>
+      </a>
     </div>
   </div>
-  <div class="row">
-    <div class="col s8 offset-s2">
-      <h6>Browse events near you:</h6>
-      <div class="card" id="card-color">
-        <div class="card-content ">
-            <div class="bg">
-              <input type="text" class="datepicker center" placeholder="Date" id="no-bottom-border"></input>
-            </div>
-            <br/>
-            <div class="bg">
-              <textarea id="textarea1" class="materialize-textarea center">Location</textarea>
-            </div>
-              <br/>
-            <div class="bg">
-              <textarea id="textarea1" class="materialize-textarea center">Choose Topic of interest</textarea>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  {% endfor %} {% endblock %}
 </body>
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    var elems = document.querySelectorAll(".datepicker");
-    var instances = M.Datepicker.init(elems, {
-      format: "yyyy-mm-dd",
-      setDefaultDate: true,
-      autoClose: true,
-      opacity: 1,
-    });
-  });
-</script>
-{% endblock %}

@@ -2,12 +2,11 @@
 <body id="home">
   <h2 class="">Available Events:</h2>
   <hr class="home" />
+  <div class="card-container">
   {% for event in events %}
   <!-- For each x in savedEvents, create a new card in the row with the details -->
-  <div class="row">
-    <div class="col s12 m4 offset-m4">
+      <div class="card" id="text-color">
       <a href="{% url 'detail' event.id %}">
-        <div class="card" id="text-color">
           <div class="card-content bg shadow">
             <div class="card-image">
               {% for photo in event.photo_set.all %}
@@ -26,7 +25,7 @@
           </div>
         </div>
       </a>
-    </div>
+  {% endfor %}
   </div>
-  {% endfor %} {% endblock %}
+{% endblock %}
 </body>

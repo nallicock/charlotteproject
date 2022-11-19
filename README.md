@@ -1,14 +1,22 @@
 # Charlotte.
 
-Charlotte. is the networking web you need to break into the Tech sector! At what is only the beginning of a technological revolution, entering the industry has never looked so compelling. At the core of the job hunting market, lies the most important aspect of networking; finding like-minded individuals that share the ties of mutual experience makes for a very welcoming community. Using Charlotte., come find tech events personalized to your search results and relevance to YOUR journey! Tech spans more than just programming. Marketing, project managing, finance, UX, and more! Every event resource you might ever want is all compiled into the Charlotte. app for your greatest convenience.
+Charlotte. is the networking web YOU need to break into the Tech sector! At what is only the beginning of a technological revolution, entering the industry has never looked so compelling. Now, at the core of this ruthless and competitive job hunting market, lies the most important aspect of breaking into tech, networking. Being able to find like-minded individuals and bond over the shared experience of finding a job in the cutthroat market makes for a very welcoming community! With Charlotte., come find tech events personalized to your search results and relevant to YOUR journey! Tech spans more than just programming, with non-technical roles in marketing, project managing, finance, UX, and many more! Every event resource you might ever want is all compiled into the Charlotte. app for your greatest convenience.
 
 # Screenshots
 
+<img src="./main_app/static/images/first.png/">
+<img src="./main_app/static/images/second.png/">
+<img src="./main_app/static/images/third.png/">
+<img src="./main_app/static/images/fourth.png/">
+<img src="./main_app/static/images/fifth.png/">
+
 # Technologies Used
+
+Charlotte. makes use of Django, Python, PostreSQL, AWS S3, HTML5, and CSS.
 
 # Getting Started
 
-Link to Heroku:
+Link to Heroku: https://charlotte-project-app.herokuapp.com/
 
 Link to Trello Board: https://trello.com/b/9FiBSef6/charlotte
 
@@ -16,7 +24,12 @@ Link to Wireframes: https://app.zeplin.io/project/6370291d6b5d921cc03a0007/dashb
 
 Link to Style Guide: https://imgur.com/a/HXqfYbc
 
+<<<<<<< HEAD
 Link to ERD:
+
+=======
+
+> > > > > > > 4195ebe793c2c2b0cb0175fa249be3a430348f30
 
 # Next Steps for Charlotte.
 

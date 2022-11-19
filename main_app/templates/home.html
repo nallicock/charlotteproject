@@ -1,6 +1,13 @@
 {% extends 'base.html' %} {% block content %}
+{% load static %}
 <body id="home-container">
-  <h2 class="">Available Events:</h2>
+  <div class = "home-banner">
+    <div class="home-banner-text">
+      <h3>Let's Get Started</h3>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis laboriosam reprehenderit pariatur voluptates animi sit doloremque ea nemo eum sapiente odit, veniam officiis, consequuntur aperiam blanditiis! Earum velit numquam inventore.</p>
+    </div>
+  </div>
+  <h2 class="page-header">Available Events!</h2>
   <hr class="home" />
   <div class="card-container">
   {% for event in events %}
@@ -13,12 +20,10 @@
               <img src="{{photo.url}}" />
               {% empty %}
               <div id="text-color-brand">No Picture Uploaded.</div>
-              <br />
               {% endfor %}
             </div>
-            <p id="card-title" class="center">{{ event.name }}</p>
+            <h3 id="card-title">{{ event.name }}</h3>
             <p id="card-date">{{ event.date }}</p>
-            <br />
             <div class="card-text">
               <p id="card-details">{{ event.address }} • {{ event.location }}</p>
               <p id="card-details">Event Category: {{event.get_category_display}}</p>
@@ -28,5 +33,16 @@
       </a>
   {% endfor %}
   </div>
+    <div class="about-section">
+      <h2 class="about-header">Our Story:</h2>
+          <div class="double-card">
+      <div class="card1">
+        <h1>hello1</h1>
+      </div>
+      <div class="card2">
+        <h1>hello2</h1>
+      </div>
+    </div>
+    </div>
 {% endblock %}
 </body>

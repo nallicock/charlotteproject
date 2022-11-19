@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
       </style> 
 
     <link
@@ -24,10 +24,11 @@
     <div class="navbar s12">
       <nav id="banner">
         <div class="nav-wrapper">
-            <ul>
+            <ul> <a href="/">
               <li class="left">
                 Charlotte.
               </li>
+            </a>
             {% if user.is_authenticated %}
             <li class="right">
               <a id="text-color" href="{% url 'events_create' %}">Create Event</a>

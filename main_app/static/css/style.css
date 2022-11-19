@@ -5,16 +5,14 @@ html {
 }
 
 #banner {
-  background-color: #262261;
+  background-color: #3f3896;
   color: white;
   height: 100px;
-  padding: 1em 3em;
   box-shadow: none;
-  margin-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 #banner a {
-  font-weight: 1000;
   color: white;
 }
 
@@ -26,19 +24,25 @@ html {
 #text-color {
   color: #222093;
 }
+
 #roboto {
   font-family: Roboto;
   color: #222093;
 }
 
 #header-welcome {
-  color: #222093;
-  margin: 10px;
-  position: relative;
+  top: 50%;
+  margin-left: 20px;
+  color: white;
+  position: absolute;
+  z-index: 1000;
 }
 
 nav {
-  margin-bottom: 10px;
+  position: sticky;
+  z-index: 2000;
+  display: block;
+  border-bottom: 1px solid #3f3896;
 }
 
 body {
@@ -167,20 +171,34 @@ hr {
 
 .card {
   transition: 0.3s;
-  width: 18%;
+  width: 15%;
   min-width: 250px;
   margin: 5px;
-  height: 100%;
   margin: 15px;
   box-shadow: 1px 1px;
 }
 
 .card img {
+  height: 100%;
+}
+
+.card-image {
+  height: 150px;
 }
 
 #card-details,
 #card-title {
   color: #222093;
+}
+
+#card-title {
+  font-size: 30px;
+  text-align: justify;
+  margin-left: 10px;
+}
+
+#card-date {
+  text-align: left;
 }
 
 #card-details {
@@ -192,13 +210,14 @@ hr {
 }
 
 #card-date {
-  color: #faaf40;
-  text-align: center;
+  color: #a782ec;
+  text-align: justify;
+  margin-left: 10px;
 }
 
-h2 {
-  margin-left: 20px;
-  margin-top: 100px;
+h2,
+h3 {
+  margin: 0px 0px 0px 20px;
 }
 
 .card:hover {
@@ -217,8 +236,54 @@ h2 {
 
 .navbar-fixed {
   margin-bottom: 10px;
+  position: sticky;
+}
+
+.nav-wrapper {
+  display: block;
+  position: sticky;
 }
 
 #home-container {
   width: 15%;
+  margin-top: 56px;
+}
+
+.page-header {
+  color: #5ec5d4;
+}
+
+.home-banner {
+  font-size: 1.5rem;
+  padding-top: 20px;
+  height: 100%;
+  background-color: #3a358d;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.home-banner-text {
+  margin-top: 20px;
+  padding-bottom: 5%;
+  margin-left: 5%;
+  margin-right: 20%;
+}
+
+.home-banner-text p {
+  margin: 0px 0px 0px 20px;
+}
+
+.about-section {
+  margin-top: 125px;
+  height: 400px;
+  margin-bottom: 50px;
+  background-color: #3a358d;
+}
+
+.about-header {
+  color: white;
+}
+
+.double-card {
+  display: inline-block;
 }

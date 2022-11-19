@@ -5,7 +5,7 @@ html {
 }
 
 #banner {
-  background-color: #3f3896;
+  background-color: #3a358d;
   color: white;
   height: 100px;
   box-shadow: none;
@@ -42,7 +42,6 @@ nav {
   position: sticky;
   z-index: 2000;
   display: block;
-  border-bottom: 1px solid #3f3896;
 }
 
 body {
@@ -158,9 +157,10 @@ hr {
 .card-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 0 auto;
   flex-wrap: wrap;
+  width: 80%;
 }
 
 .card-content img {
@@ -243,20 +243,18 @@ h3 {
   display: block;
   position: sticky;
 }
-
-#home-container {
-  width: 15%;
-  margin-top: 56px;
-}
-
 .page-header {
-  color: #5ec5d4;
+  color: black;
 }
 
 .home-banner {
+  display: flex;
+  width: 100%;
+  margin-right: 0;
+  align-items: center;
+  flex-direction: row;
   font-size: 1.5rem;
-  padding-top: 20px;
-  height: 100%;
+  height: 500px;
   background-color: #3a358d;
   color: white;
   font-family: "Times New Roman", Times, serif;
@@ -275,8 +273,16 @@ h3 {
 
 .about-section {
   margin-top: 125px;
-  height: 400px;
+  height: 500px;
+  width: 100%;
+  margin: 0 auto;
   margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.about-section {
   background-color: #3a358d;
 }
 
@@ -285,5 +291,60 @@ h3 {
 }
 
 .double-card {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* width: 80%;
+  margin: 0 auto; */
+}
+
+.card1,
+.card2 {
+  height: 100%;
+  width: 50%;
+  border: none;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.card1 img,
+.card2 img {
+  width: 100%;
+}
+
+.card-p {
+  font-size: 20px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#friend-card {
+  background-image: url("../images/friends.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+}
+
+@media only screen and (max-width: 1068px) {
+  .card-container {
+    justify-content: space-evenly;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .card1 {
+    float: left;
+    margin: 0 auto;
+  }
+
+  .card-2 {
+    float: left;
+  }
+
+  .card-p {
+    width: 100%;
+    flex-wrap: wrap;
+  }
 }

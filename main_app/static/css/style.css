@@ -7,7 +7,7 @@ html {
 #banner {
   background-color: #262261;
   color: white;
-  height: 200px;
+  height: 100px;
   padding: 1em 3em;
   box-shadow: none;
 }
@@ -27,6 +27,11 @@ html {
 }
 #roboto {
   font-family: Roboto;
+  color: #222093;
+}
+
+#header-welcome {
+  color: #222093;
 }
 body {
   background-color: white;
@@ -152,7 +157,20 @@ hr {
   min-width: 350px;
 }
 
+.card img {
+  border: solid #262261 1px;
+}
+
 .card:hover {
   transition: 0.3s;
   width: 21%;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+  font-size: 12px;
 }

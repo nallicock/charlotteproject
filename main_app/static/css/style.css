@@ -45,7 +45,7 @@ nav {
 }
 
 body {
-  background-color: white;
+  background-color: rgb(245, 245, 245);
 }
 
 .detailContainer {
@@ -130,7 +130,7 @@ label {
 }
 
 input {
-  text-align: center;
+  text-align: left;
 }
 
 .link-color {
@@ -193,7 +193,7 @@ hr {
 
 #card-title {
   font-size: 30px;
-  text-align: justify;
+  text-align: left;
   margin-left: 10px;
 }
 
@@ -235,13 +235,10 @@ h3 {
 }
 
 .navbar-fixed {
-  margin-bottom: 10px;
-  position: sticky;
 }
 
 .nav-wrapper {
   display: block;
-  position: sticky;
 }
 .page-header {
   color: black;
@@ -265,6 +262,7 @@ h3 {
   padding-bottom: 5%;
   margin-left: 5%;
   margin-right: 20%;
+  width: 55%;
 }
 
 .home-banner-text p {
@@ -327,6 +325,22 @@ h3 {
   height: 500px;
 }
 
+footer {
+  height: 75px;
+  background-color: #3a358d;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.footer-header {
+  text-align: center;
+}
+
 @media only screen and (max-width: 1068px) {
   .card-container {
     justify-content: space-evenly;
@@ -346,5 +360,18 @@ h3 {
   .card-p {
     width: 100%;
     flex-wrap: wrap;
+  }
+
+  .home-banner-text {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .card-container {
+    width: 90%;
+  }
+  .card {
+    width: 100%;
   }
 }

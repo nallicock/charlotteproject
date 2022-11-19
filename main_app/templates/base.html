@@ -21,10 +21,13 @@
       </style> 
   </head>
   <body id="home">
-    <div class="navbar-fixed s12">
+    <div class="navbar s12">
       <nav id="banner">
         <div class="nav-wrapper">
             <ul>
+              <li class="left">
+                Charlotte.
+              </li>
             {% if user.is_authenticated %}
             <li class="right">
               <a id="text-color" href="{% url 'events_create' %}">Create Event</a>
@@ -54,12 +57,8 @@
             <div id="header-welcome">Hello there.</div>
             {% endif %}
           </ul>
-          <div>
-            <a id="text-color-brand" href="/" class="brand-logo center">Charlotte.</a>
-          </div>
         </nav>
       </div>
-    <br/><br/><br/><br/><br/>
 
     <main>{% block content %} {% endblock %}</main>
     <script>

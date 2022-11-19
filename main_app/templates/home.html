@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-<body id="home">
+<body id="home-container">
   <h2 class="">Available Events:</h2>
   <hr class="home" />
   <div class="card-container">
@@ -7,7 +7,7 @@
   <!-- For each x in savedEvents, create a new card in the row with the details -->
       <div class="card" id="text-color">
       <a href="{% url 'detail' event.id %}">
-          <div class="card-content bg shadow">
+          <div class="card-box">
             <div class="card-image">
               {% for photo in event.photo_set.all %}
               <img src="{{photo.url}}" />
@@ -16,14 +16,15 @@
               <br />
               {% endfor %}
             </div>
-            <p id="title" class="center">{{ event.name }}</p>
-            <p class="center" id="title">{{ event.date }}</p>
+            <p id="card-title" class="center">{{ event.name }}</p>
+            <p id="card-date">{{ event.date }}</p>
             <br />
-            <p id="roboto">{{ event.location }}</p>
-            <p id="roboto">{{ event.address }}</p>
-            <p id="roboto">Event Category: {{event.get_category_display}}</p>
+            <div class="card-text">
+              <p id="card-details">{{ event.address }} • {{ event.location }}</p>
+              <p id="card-details">Event Category: {{event.get_category_display}}</p>
           </div>
-        </div>
+          </div>
+            </div>
       </a>
   {% endfor %}
   </div>

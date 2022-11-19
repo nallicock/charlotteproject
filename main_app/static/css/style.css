@@ -10,6 +10,7 @@ html {
   height: 100px;
   padding: 1em 3em;
   box-shadow: none;
+  margin-bottom: 10px;
 }
 
 #banner a {
@@ -32,7 +33,14 @@ html {
 
 #header-welcome {
   color: #222093;
+  margin: 10px;
+  position: relative;
 }
+
+nav {
+  margin-bottom: 10px;
+}
+
 body {
   background-color: white;
 }
@@ -151,19 +159,51 @@ hr {
   flex-wrap: wrap;
 }
 
+.card-content img {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .card {
   transition: 0.3s;
-  width: 20%;
-  min-width: 350px;
+  width: 18%;
+  min-width: 250px;
+  margin: 5px;
+  height: 100%;
+  margin: 15px;
+  box-shadow: 1px 1px;
 }
 
 .card img {
-  border: solid #262261 1px;
+}
+
+#card-details,
+#card-title {
+  color: #222093;
+}
+
+#card-details {
+  color: #6765c7;
+}
+
+.card-text {
+  padding: 20px;
+}
+
+#card-date {
+  color: #faaf40;
+  text-align: center;
+}
+
+h2 {
+  margin-left: 20px;
+  margin-top: 100px;
 }
 
 .card:hover {
   transition: 0.3s;
-  width: 21%;
+  box-shadow: 10px 10px;
 }
 
 .right {
@@ -172,5 +212,13 @@ hr {
 
 .left {
   float: left;
-  font-size: 12px;
+  font-size: 20px;
+}
+
+.navbar-fixed {
+  margin-bottom: 10px;
+}
+
+#home-container {
+  width: 15%;
 }

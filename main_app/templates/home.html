@@ -7,7 +7,7 @@
       <p>Charlotte. is the networking web YOU need to break into the Tech sector! At what is only the beginning of a technological revolution, entering the industry has never looked so compelling. Now, at the core of this ruthless and competitive job hunting market, lies the most important aspect of breaking into tech: networking.</p>
     </div>
   </div>
-  <h3 class="page-header">Available Events!</h3>
+  <h4 class="page-header">Available Events!</h4>
   <hr class="home" />
   <div class="card-container">
   {% for event in events %}
@@ -22,7 +22,7 @@
               <div id="text-color-brand">No Picture Uploaded.</div>
               {% endfor %}
             </div>
-            <h4 id="card-title">{{ event.name }}</h4>
+            <p id="card-title">{{ event.name }}</p>
             <p id="card-date">{{ event.date }}</p>
             <div class="card-text">
               <p id="card-details">{{ event.address }} • {{ event.location }}</p>

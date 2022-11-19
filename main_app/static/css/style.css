@@ -198,6 +198,7 @@ hr {
 #card-title {
   text-align: center;
   height: 60px;
+  font-size: 20px;
 }
 
 #card-details {
@@ -240,6 +241,7 @@ hr {
 .page-header {
   color: #222093;
   text-align: center;
+  font-weight: bold;
 }
 
 .home-banner {
@@ -257,6 +259,8 @@ hr {
 }
 
 .home-banner-title {
+  font-weight: bold;
+  font-size: 40px;
   position: absolute;
   top: 0px;
   width: 100%;
@@ -266,6 +270,7 @@ hr {
 .home-banner-text {
   margin-top: 20px;
   padding-bottom: 5%;
+  text-align: center;
 }
 
 .home-banner-text p {

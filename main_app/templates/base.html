@@ -69,6 +69,18 @@
       </div>
     </footer>
     <script>
+    //Fade cards in on scroll.
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          document.querySelectorAll(".card-container")[0].classList.add("fadeInY");
+        }
+      })
+    })
+
+    observer.observe(document.querySelector(".card-container"));
+
+    //caldendar
     var selectEl = document.getElementById('id_category');
       M.FormSelect.init(selectEl);
       let selectOptionsEls = document.querySelectorAll('[id^="select-options"]')

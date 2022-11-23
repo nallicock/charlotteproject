@@ -121,8 +121,16 @@ body {
 }
 
 #login-button {
-  background-color: white;
-  color: black;
+  width: 100%;
+  background-color: #3a358d;
+  box-shadow: inset 0 0 0 0 #100e96;
+  transition: 0.4s;
+}
+
+#login-button:hover {
+  box-shadow: inset 2000px 0 0 0 #010055;
+  background-color: #3a358d;
+  color: white;
 }
 
 label {
@@ -150,8 +158,15 @@ hr {
 }
 
 .btn {
-  background-color: #1f1f7c;
-  background-color: rgb(90, 60, 60);
+  background-color: #3a358d;
+  box-shadow: inset 0 0 0 0 #100e96;
+  transition: 0.4s;
+}
+
+.btn:hover {
+  box-shadow: inset 300px 0 0 0 #010055;
+  background-color: #3a358d;
+  color: white;
 }
 
 .brand-logo {
@@ -161,10 +176,11 @@ hr {
 .card-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0 auto;
   flex-wrap: wrap;
-  width: 80%;
+  max-width: 60%;
+  opacity: 0;
 }
 
 .card-content img {
@@ -173,20 +189,24 @@ hr {
   padding: 0;
 }
 
-.card {
+.event-card {
   transition: 0.3s;
   width: 15%;
   min-width: 250px;
-  margin: 5px;
   margin: 15px;
   box-shadow: 1px 1px;
 }
 
-.card img {
-  height: 100%;
+.event-card img {
 }
 
-.card-image {
+.event-cardimg {
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+}
+
+.event-card-image {
   height: 150px;
 }
 
@@ -195,30 +215,31 @@ hr {
   color: #222093;
 }
 
-#card-title {
+#event-card-title {
   text-align: center;
   height: 60px;
   font-size: 20px;
+  margin-top: 50px;
 }
 
-#card-details {
+#event-card-details {
   color: #6765c7;
   text-align: center;
   display: block;
 }
 
-.card-text {
+.event-card-text {
   padding: 20px;
   display: block;
 }
 
-#card-date {
+#event-card-date {
   color: #a782ec;
   text-align: center;
   display: block;
 }
 
-.card:hover {
+.event-card:hover {
   transition: 0.3s;
   box-shadow: 10px 10px;
 }
@@ -256,25 +277,28 @@ hr {
   background-color: #3a358d;
   color: white;
   font-family: "Times New Roman", Times, serif;
+  z-index: 1000;
 }
 
 .home-banner-title {
   font-weight: bold;
   font-size: 40px;
   position: absolute;
-  top: 0px;
+  top: 40px;
   width: 100%;
   text-align: center;
 }
 
 .home-banner-text {
-  margin-top: 20px;
-  padding-bottom: 5%;
+  transition: 0.5s;
+  margin-top: 100px;
   text-align: center;
+  line-height: 40px;
+  font-weight: 500;
 }
 
 .home-banner-text p {
-  width: 60%;
+  width: 45%;
   margin: 0 auto;
 }
 
@@ -335,6 +359,7 @@ hr {
 }
 
 footer {
+  margin-top: auto;
   height: 75px;
   background-color: #3a358d;
   color: white;
@@ -351,17 +376,54 @@ footer {
   text-decoration: none !important;
 }
 
+#myvideo {
+  width: 100%;
+  margin-top: -310px;
+}
+
 .footer-header {
   text-align: center;
+}
+
+.video-banner {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(39, 39, 39, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  height: 99%;
+  opacity: 1;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.overlay p {
+  bottom: 15%;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  width: 80%;
+  transform: translateX(-50%);
 }
 
 @media only screen and (max-width: 1068px) {
   .card-container {
     justify-content: space-evenly;
+    width: 80%;
   }
 }
 
 @media only screen and (max-width: 950px) {
+  .event-card {
+    margin: 0 auto;
+  }
   .card1 {
     float: left;
     margin: 0 auto;
@@ -377,15 +439,104 @@ footer {
   }
 
   .home-banner-text {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .home-banner-title {
+    top: -20px;
+  }
+  .home-banner-text p {
+    margin: 0 auto;
     width: 80%;
+  }
+  .home-banner {
+    width: 100%;
+    height: 300px;
+  }
+
+  #myvideo {
+    margin-top: 0;
+    height: 100%;
+  }
+  .card-container {
+    width: 100%;
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 500px) {
   .card-container {
     width: 90%;
   }
-  .card {
+  .event-card {
     width: 100%;
+  }
+
+  .home-banner-text,
+  .home-banner-text p {
+    width: 100%;
+  }
+
+  .overlay p {
+    top: 20%;
+    left: 50%;
+    width: 80%;
+    transform: translateX(-50%);
+  }
+  .home-banner-title {
+    top: -10%;
+  }
+  .home-banner-text p {
+    width: 95%;
+  }
+}
+
+.fadeInY {
+  -webkit-animation: fadeInY 0.4s both;
+  -moz-animation: fadeInY 0.4s both;
+  -o-animation: fadeInY 0.4s both;
+  animation: fadeInY 0.4s both;
+}
+
+@-webkit-keyframes fadeInY {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-25px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-moz-keyframes fadeInY {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-25px);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0);
+  }
+}
+
+@-o-keyframes fadeInY {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-25px);
+  }
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0);
+  }
+}
+
+@keyframes fadeInY {
+  0% {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

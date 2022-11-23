@@ -4,44 +4,37 @@
   <div class = "home-banner">
     <div class="home-banner-text">
       <h3 class = "home-banner-title">Let's Get Started</h3>
-      <p>Charlotte. is the networking web YOU need to break into the Tech sector! At what is only the beginning of a technological revolution, entering the industry has never looked so compelling. Now, at the core of this ruthless and competitive job hunting market, lies the most important aspect of breaking into tech: networking.</p>
+      <p>Charlotte. is the networking web YOU need to break into the Tech sector! At what is only the beginning of a technological revolution, entering the industry has never looked so compelling.</p>
     </div>
   </div>
-  <h4 class="page-header">Available Events!</h4>
-  <hr class="home" />
+  <div class="video-banner">
+    <video autoplay muted loop id="myvideo" src="../static/images/background.mp4"></video>
+    <div class="overlay">
+      <p> At the core of this ruthless and competitive job hunting market, lies the most important aspect of breaking into tech: networking.</p>
+    </div>
+  </div>
+  <h4 class="page-header">Available Events</h4>
   <div class="card-container">
   {% for event in events %}
   <!-- For each x in savedEvents, create a new card in the row with the details -->
-      <div class="card" id="text-color">
+      <div class="event-card" id="text-color">
       <a href="{% url 'detail' event.id %}">
-          <div class="card-box">
-            <div class="card-image">
+            <div class="event-card-image">
               {% for photo in event.photo_set.all %}
-              <img src="{{photo.url}}" />
+              <img src="{{photo.url}}" class = "event-cardimg"/>
               {% empty %}
               <div id="text-color-brand">No Picture Uploaded.</div>
               {% endfor %}
             </div>
-            <p id="card-title">{{ event.name }}</p>
-            <p id="card-date">{{ event.date }}</p>
-            <div class="card-text">
-              <p id="card-details">{{ event.address }} • {{ event.location }}</p>
-              <p id="card-details">Event Category: {{event.get_category_display}}</p>
-          </div>
+            <p id="event-card-title">{{ event.name }}</p>
+            <p id="event-card-date">{{ event.date }}</p>
+            <div class="event-card-text">
+              <p id="event-card-details">{{ event.address }} • {{ event.location }}</p>
+              <p id="event-card-details">Event Category: {{event.get_category_display}}</p>
           </div>
             </div>
       </a>
   {% endfor %}
   </div>
-    <!-- <div class="about-section">
-      <div class="double-card">
-      <div class="card1" id = "friend-card">
-        
-      </div>
-      <div class="card2">
-        <p class = "card-p">Charlotte. is the networking web YOU need to break into the Tech sector! At what is only the beginning of a technological revolution, entering the industry has never looked so compelling. Now, at the core of this ruthless and competitive job hunting market, lies the most important aspect of breaking into tech, networking. Being able to find like-minded individuals and bond over the shared experience of finding a job in the cutthroat market makes for a very welcoming community! With Charlotte., come find tech events personalized to your search results and relevant to YOUR journey! </p>
-      </div>
-      </div>
-    </div> -->
 {% endblock %}
 </body>

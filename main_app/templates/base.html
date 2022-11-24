@@ -28,6 +28,7 @@
               <li class="left">
                 Charlotte.
               </li>
+              <li><img src="../static/images/Charlotte..png" class = "charlotteLogo" alt=""></li>
             </a>
             {% if user.is_authenticated %}
             <li class="right">
@@ -69,26 +70,24 @@
       </div>
     </footer>
     <script>
-    //Fade cards in on scroll.
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) {
-          document.querySelectorAll(".card-container")[0].classList.add("fadeInY");
-        }
-      })
-    })
-
-    observer.observe(document.querySelector(".card-container"));
-
     //caldendar
     var selectEl = document.getElementById('id_category');
       M.FormSelect.init(selectEl);
       let selectOptionsEls = document.querySelectorAll('[id^="select-options"]')
       for (let option of selectOptionsEls) {
         option.childNodes.forEach(li => {
-          li.style.color = "#222093"
-        })
-       }
+          li.style.color = "#222093";
+        });
+       };
+    
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          document.querySelectorAll(".card-container")[0].classList.add("fadeInY");
+        }
+      });
+    });
+    observer.observe(document.querySelector(".card-container"));
 
     document.addEventListener("DOMContentLoaded", function () {
     var elems = document.getElementById("id_date");
@@ -100,7 +99,8 @@
         });
      });
 
-      // document.querySelector('.dropdown-trigger').style.color="#222093"
+      document.querySelector('.dropdown-trigger').style.color="#222093";
+
     </script>
   </body>
 </html>

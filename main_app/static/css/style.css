@@ -413,6 +413,10 @@ footer {
   transform: translateX(-50%);
 }
 
+.charlotteLogo {
+  height: 50px;
+}
+
 @media only screen and (max-width: 1068px) {
   .card-container {
     justify-content: space-evenly;
@@ -491,10 +495,10 @@ footer {
 }
 
 .fadeInY {
-  -webkit-animation: fadeInY 0.4s both;
-  -moz-animation: fadeInY 0.4s both;
-  -o-animation: fadeInY 0.4s both;
-  animation: fadeInY 0.4s both;
+  -webkit-animation: fadeInY 0.3s both;
+  -moz-animation: fadeInY 0.3s both;
+  -o-animation: fadeInY 0.3s both;
+  animation: fadeInY 0.3s both;
 }
 
 @-webkit-keyframes fadeInY {
